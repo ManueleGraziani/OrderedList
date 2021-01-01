@@ -1,0 +1,1 @@
+void  ReadFromFile(char*, void*);
