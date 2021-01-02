@@ -3,12 +3,12 @@
 #include "Sort.h"
 
 
-void Merge(list *list,node *listHead,node *middle1,node *midlle2,node *listTail){
+void Merge(list *list, node **listHead, node **middle1, node **middle2, node **listTail){
 
-	node *leftIdx = listHead, *rightIdx = midlle2;
+	node *leftIdx = *listHead, *rightIdx = *middle2;
 	node *swapNode = NULL, *tempNode = NULL; 
 
-	while( (leftIdx->id <= middle1->id) && (rightIdx->id <= listTail->id) ){
+	while( (leftIdx->id <= (*middle1)->id) && (rightIdx->id <= (*listTail)->id) ){
 
 		if(leftIdx->value <= rightIdx->value){
 			leftIdx = leftIdx->nextNode;	
@@ -17,14 +17,14 @@ void Merge(list *list,node *listHead,node *middle1,node *midlle2,node *listTail)
 			rightIdx = rightIdx->nextNode;
 
 			if(rightIdx == NULL){
-				middle1->nextNode = NULL;
-				list->listTail = middle1;
-				listTail = middle1;
+                (*middle1)->nextNode = NULL;
+				list->listTail = *middle1;
+				*listTail = *middle1;
 			}
 			
 			else{
-				rightIdx->preNode = middle1;
-				middle1->nextNode = rightIdx;
+				rightIdx->preNode = *middle1;
+                (*middle1)->nextNode = rightIdx;
 			}
 			
 			swapNode->nextNode = leftIdx;
@@ -36,12 +36,16 @@ void Merge(list *list,node *listHead,node *middle1,node *midlle2,node *listTail)
 				tempNode->nextNode = swapNode;
 			}
 
+			if(leftIdx == *listHead)
+			    *listHead = swapNode;
+
 
 		}
+		if(rightIdx==NULL)
+		    break;
+		if(rightIdx->id > (*listTail)->id)
+		    *listTail = *middle1;
 
-
-		if(rightIdx == NULL)
-			break;
 	}
 
 	node *curNode = list->listHead;
