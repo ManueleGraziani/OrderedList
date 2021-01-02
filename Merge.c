@@ -6,45 +6,40 @@
 void Merge(list *list, node **listHead, node **middle1, node **middle2, node **listTail){
 
 	node *leftIdx = *listHead, *rightIdx = *middle2;
-	node *swapNode = NULL, *tempNode = NULL; 
+	node *preNode = NULL, *nextNode = NULL, tempNode;
 
 	while( (leftIdx->id <= (*middle1)->id) && (rightIdx->id <= (*listTail)->id) ){
 
 		if(leftIdx->value <= rightIdx->value){
-			leftIdx = leftIdx->nextNode;	
+			leftIdx = leftIdx->nextNode;
 		}else{
-			swapNode = rightIdx;
-			rightIdx = rightIdx->nextNode;
 
-			if(rightIdx == NULL){
-                (*middle1)->nextNode = NULL;
-				list->listTail = *middle1;
-				*listTail = *middle1;
-			}
-			
-			else{
-				rightIdx->preNode = *middle1;
-                (*middle1)->nextNode = rightIdx;
-			}
-			
-			swapNode->nextNode = leftIdx;
-			swapNode->preNode = leftIdx->preNode;
-			if(leftIdx->preNode == NULL)
-				list->listHead = swapNode;
-			else{
-				tempNode = swapNode->preNode;
-				tempNode->nextNode = swapNode;
-			}
+		    *listHead = *middle2;
+		    *listTail =
 
-			if(leftIdx == *listHead)
-			    *listHead = swapNode;
+
+            if((*listTail)->nextNode == NULL){
+                list->listTail
+
+
+            }else{
+
+
+            }
+
+
+            if((*listHead)->preNode == NULL){
+
+
+            }else{
+
+            }
+
+
+
 
 
 		}
-		if(rightIdx==NULL)
-		    break;
-		if(rightIdx->id > (*listTail)->id)
-		    *listTail = *middle1;
 
 	}
 
