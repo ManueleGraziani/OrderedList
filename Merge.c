@@ -9,7 +9,7 @@ void Merge(list *list, node **listHead, node **middle1, node **middle2, node **l
 	node *tempNodePtr = NULL;
 	unsigned int tempId;
 
-	while( (leftIdx->id <= (*middle1)->id) && (rightIdx->id <= (*listTail)->id) ){
+	while( (leftIdx != (*middle1)->nextNode) && (rightIdx != (*listTail)->nextNode) ){
 
 		if(leftIdx->value <= rightIdx->value){
 			leftIdx = leftIdx->nextNode;
@@ -84,7 +84,7 @@ void Merge(list *list, node **listHead, node **middle1, node **middle2, node **l
 
 	}
 
-	/*
+
 	node *curNode = list->listHead;
 	unsigned int i = 1;
 	while(curNode != NULL){
@@ -93,6 +93,6 @@ void Merge(list *list, node **listHead, node **middle1, node **middle2, node **l
 
 
 	}
-*/
+
 
 }
