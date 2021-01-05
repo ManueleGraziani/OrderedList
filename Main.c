@@ -4,7 +4,7 @@
 #include "File.h"
 #include "Sort.h"
 
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
 static void __Test(list* list) {
