@@ -14,23 +14,9 @@ void PrintList(list *list){
 	}
 
 	while(curNode != NULL){
-
 		printf("%d:%f -> ", id++, curNode->value);
 		curNode = curNode->nextNode;
 	}
 	
-	puts("NULL");
-
-
-		curNode = list->listTail;
-	puts("stampa al contrario frocio che non sei bono a fa lo swap");
-	while(curNode!=NULL){
-
-		printf("%f ->",curNode->value);
-		curNode = curNode->preNode;
-
-
-	}
-
 	puts("NULL");
 }

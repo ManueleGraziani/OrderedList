@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include "List.h"
 
-#define BUFFER_LEN 10
+#define BUFFER_LEN 16
 
 void ReadFromFile(char *filePath,void *list){
 
 	FILE *fptr = NULL; // Puntatore al file
-	char buffer[BUFFER_LEN], **endPtr = NULL;
+	char buffer[BUFFER_LEN+1], **endPtr = NULL;
 	double value;
 
 	// Apertura del file

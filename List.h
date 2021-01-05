@@ -18,3 +18,4 @@ typedef struct list list;
 int AppendNewNode(list*, double*); // Aggiunge un nuovo nodo alla lista
 void *GetNewNode(const double*);// Inizializza un nuovo nodo
 void PrintList(list*);// Stampa la lista
+void DeallocationList(list*);// Dealloca l'intera lista
