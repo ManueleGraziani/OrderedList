@@ -1,30 +1,18 @@
-#include <stdio.h>
 #include <string.h>
 #include "Sort.h"
 
+static void __Swap();
 
 void Merge(list *list, node **listHead, node **middle1, node **middle2, node **listTail){
 
 	node *leftIdx = *listHead, *rightIdx = *middle2;
 	node *tempNodePtr = NULL;
-	unsigned int tempId;
 
 	while( (leftIdx != (*middle1)->nextNode) && (rightIdx != (*listTail)->nextNode) ){
 
 		if(leftIdx->value <= rightIdx->value){
 			leftIdx = leftIdx->nextNode;
 		}else{
-
-            tempId = leftIdx->id;
-            leftIdx->id = rightIdx->id;
-            rightIdx->id = tempId;
-
-            if(leftIdx != *middle1 && rightIdx != *listTail) {
-                tempId = (*listTail)->id;
-                (*listTail)->id = (*middle1)->id;
-                (*middle1)->id = tempId;
-            }
-
 
 		    // Casp in cui è la coda della lista
 		    if( (*listTail)->nextNode == NULL){
@@ -84,15 +72,6 @@ void Merge(list *list, node **listHead, node **middle1, node **middle2, node **l
 
 	}
 
-
-	node *curNode = list->listHead;
-	unsigned int i = 1;
-	while(curNode != NULL){
-		curNode->id = i++;
-		curNode = curNode->nextNode;
-
-
-	}
 
 
 }

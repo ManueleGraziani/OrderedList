@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "List.h"
 
-void *GetNewNode(unsigned int id, double *value){
+void *GetNewNode(const double *value){
 
 	node *newNode = malloc(sizeof(node));
 	if(newNode == NULL){
@@ -10,7 +10,6 @@ void *GetNewNode(unsigned int id, double *value){
 		exit(EXIT_FAILURE);
 	}
 
-	newNode->id = id;
 	newNode->value = *value;
 	newNode->nextNode = NULL;
 	newNode->preNode = NULL;

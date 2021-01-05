@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "List.h"
 
 int AppendNewNode(list *list, double *value){
 
-	node *newNode = GetNewNode(++(list->listLen),value);
+	node *newNode = GetNewNode(value);
+	list->listLen++;
 
 	if(list->listHead == NULL){
 		

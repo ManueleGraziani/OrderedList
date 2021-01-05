@@ -1,21 +1,20 @@
-// Definizione del nodo
+// Definizione della struttura del nodo lista
 struct listNode{
-	unsigned int id;
 	double value;
 	struct listNode *nextNode;
 	struct listNode *preNode;
 };
 
+// Definizione della struttura dell'elemento lista
 struct list{
 	struct listNode *listHead;
 	struct listNode *listTail;
 	unsigned int listLen;
-
 };
 
 typedef struct listNode node;
 typedef struct list list;
 
-void *GetNewNode(unsigned int, double*);
-int AppendNewNode(list*, double*);
-void PrintList(list*);
+int AppendNewNode(list*, double*); // Aggiunge un nuovo nodo alla lista
+void *GetNewNode(const double*);// Inizializza un nuovo nodo
+void PrintList(list*);// Stampa la lista

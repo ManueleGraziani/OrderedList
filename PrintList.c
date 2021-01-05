@@ -5,17 +5,17 @@
 void PrintList(list *list){
 
 	node *curNode = list->listHead;
+	unsigned int id = 1;
 
+	// Viene verificato se la lista non è vuota
 	if(curNode == NULL){
-		
 		fprintf(stderr,"Errore: impossibile stampare la lista\n");
 		exit(EXIT_FAILURE);
-
 	}
 
 	while(curNode != NULL){
 
-		printf("%hd:%f -> ",curNode->id,curNode->value);
+		printf("%d:%f -> ", id++, curNode->value);
 		curNode = curNode->nextNode;
 	}
 	
@@ -26,15 +26,11 @@ void PrintList(list *list){
 	puts("stampa al contrario frocio che non sei bono a fa lo swap");
 	while(curNode!=NULL){
 
-		printf("%hd:%f ->",curNode->id,curNode->value);
+		printf("%f ->",curNode->value);
 		curNode = curNode->preNode;
 
 
 	}
 
 	puts("NULL");
-
-
-
-	return;
 }
